@@ -58,7 +58,6 @@ async def get_free_games():
 
 def check_feed(store: str, last_checked: datetime):
     logging.info(f'Checking feed for {store}')
-    feed_url = 'https://www.reddit.com/r/FreeGameFindings/new.rss'
     store_url = quote(store)
     feed_url = f'https://www.reddit.com/r/FreeGameFindings/search.rss?q=title%3A{store_url}&restrict_sr=1&sr_nsfw=&sort=new&include_over_18=1'
     feed: dict = feedparser.parse(feed_url)
