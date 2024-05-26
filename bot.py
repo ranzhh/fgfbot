@@ -19,7 +19,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 # Set up bot
-bot = commands.Bot(command_prefix=c.get('RIN_BOT_PREFIX'), intents=intents)
+bot = commands.Bot(command_prefix=c.get('BOT_PREFIX'), intents=intents)
 
 def create_game_embed(title: str, link: str, store: str):
     embed = discord.Embed(title=title, url=link, description=f'New free game on {store}')
@@ -29,7 +29,7 @@ def create_game_embed(title: str, link: str, store: str):
 async def check_free_games():
     free_games = await get_free_games()
 
-    for channel in c.get('RIN_BOT_CHANNELS'):
+    for channel in c.get('BOT_CHANNELS'):
         c_id, c_deb = channel.get('id'), channel.get('debug')
         ctx = await bot.fetch_channel(c_id)
 
@@ -76,4 +76,4 @@ async def on_ready():
 last_checked = datetime.now()
 
 # Launch bot
-bot.run(c.get('RIN_BOT_TOKEN'))
+bot.run(c.get('BOT_TOKEN'))
