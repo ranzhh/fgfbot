@@ -5,5 +5,8 @@
         {"id": "CHANNEL_ID_HERE", "debug": true},
         {"id": "CHANNEL_ID_HERE", "debug": false}
         ...
+    ],
+    "STORES": [
+        "Steam", "Epic Games", "GOG"
     ]
 }

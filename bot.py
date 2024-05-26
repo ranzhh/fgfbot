@@ -46,7 +46,7 @@ async def get_free_games():
 
     logging.info('Getting free games at time: ' + str(last_checked))
 
-    stores = ['Epic Games', 'Steam', 'GOG']
+    stores = c.get('STORES')
 
     new_entries = [check_feed(store, last_checked) for store in stores]
     new_entries = [entry for entries in new_entries for entry in entries]
