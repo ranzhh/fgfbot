@@ -1,0 +1,9 @@
+{
+    "BOT_TOKEN": "YOUR_BOT_TOKEN_HERE",
+    "BOT_PREFIX": "YOUR_BOT_PREFIX_HERE",
+    "BOT_CHANNELS": [
+        {"id": "CHANNEL_ID_HERE", "debug": true},
+        {"id": "CHANNEL_ID_HERE", "debug": false}
+        ...
+    ]
+}
