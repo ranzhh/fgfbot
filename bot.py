@@ -64,6 +64,7 @@ def check_feed(store: str, last_checked: datetime):
 
     entries = feed.get('entries')
     new_entries = [entry for entry in entries if datetime.strptime(entry.get('published'), '%Y-%m-%dT%H:%M:%S+00:00') > last_checked]
+    new_entries = list(map(lambda x: x.update({'store': store}), new_entries))
 
     return new_entries
 
